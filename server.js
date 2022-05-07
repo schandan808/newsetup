@@ -16,6 +16,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
+// git config --global credential.helper store
 mongoose.connect(process.env.DATABASE_URL, (err) => {
   if (err) {
     console.log("errr");
