@@ -6,7 +6,19 @@ router.get("/", (req, res, next) => {
 });
 
 router.post("/data", (req, res) => {
-  console.log(req.body, "'--------------------hereeeeeeeeeee");
+  // console.log(req.body, "'--------------------hereeeeeeeeeee");
+  let data = req.body;
+  console.log(res.socket);
+
+  res.status(200).json({
+    data: data,
+  });
+  //   res.status(200).json({
+  //     status: 1,
+  //     statusCode: 200,
+  //     data: data,
+  //     message: "success",
+  //   });
 });
 
 module.exports = router;
