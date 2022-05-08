@@ -6,7 +6,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 var bodyParser = require("body-parser");
 
-const indexrouter = require("./routes/index");
+const commonsrc = require("./src/commonrouter");
 
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
@@ -26,6 +26,5 @@ mongoose.connect(process.env.DATABASE_URL, (err) => {
   }
 });
 
-app.use("/", indexrouter);
-
+app.use("/", commonsrc);
 app.listen(process.env.PORT);
