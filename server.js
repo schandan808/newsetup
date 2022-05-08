@@ -21,10 +21,11 @@ mongoose.connect(process.env.DATABASE_URL, (err) => {
   if (err) {
     console.log("errr");
   } else {
-    console.log("connected");
+    // console.log()
+    console.log(`connected port ${process.env.PORT}`);
   }
 });
 
 app.use("/", indexrouter);
 
-app.listen(process.env.PORT || 3000);
+app.listen(process.env.PORT);
