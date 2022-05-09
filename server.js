@@ -1,5 +1,6 @@
 const express = require("express");
 const app = express();
+const path = require("path");
 const expresslayout = require("express-ejs-layouts");
 const mongoose = require("mongoose");
 const dotenv = require("dotenv");
@@ -8,9 +9,8 @@ var bodyParser = require("body-parser");
 
 const commonsrc = require("./src/commonrouter");
 
+app.set("views", path.join(__dirname, "views"));
 app.set("view engine", "ejs");
-app.set("views", __dirname + "/views");
-app.set("layout", "layouts/layout");
 app.use(expresslayout);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -22,7 +22,7 @@ mongoose.connect(process.env.DATABASE_URL, (err) => {
     console.log("errr");
   } else {
     // console.log()
-    console.log(`connected port ${process.env.PORT}`);
+    console.log(`DB connected  http://localhost:${process.env.PORT}`);
   }
 });
 

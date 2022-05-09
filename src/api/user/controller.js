@@ -1,5 +1,6 @@
 module.exports = {
   apisdata: async (req, res) => {
-    res.send("data is here");
+    // res.send("<h1> i'm here </h1>");
+    res.render("/index");
   },
 };
