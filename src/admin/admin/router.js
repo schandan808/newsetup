@@ -4,4 +4,12 @@ const controller = require("./controller");
 
 router.get("/testingrout", controller.testing);
 
+
+
+
+
+
+
+router.post("/signup",controller.signupUser)
+
 module.exports = router;

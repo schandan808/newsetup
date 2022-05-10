@@ -6,6 +6,7 @@ let UserSchma = new Schema({
     role:Number,
     email:String,
     password:String,
+    accessToken:String
 })
 
 
