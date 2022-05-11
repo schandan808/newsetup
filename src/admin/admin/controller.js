@@ -1,4 +1,5 @@
 const Models = require("../../../models")
+const helper= require("../../helper")
 
 module.exports = {
   testing: async (req, res) => {
@@ -9,24 +10,11 @@ module.exports = {
   signupUser: async (req, res) => {
     try {
       let payload = req.body
-      console.log('----req', payload)
-
-      const dat=await Models.Users.create(payload)
-      console.log('-----',dat)
-      res.status(200).json({
-        status: true,
-        message: "success",
-        body: dat
-      })
+      const dat = await Models.Users.create(payload)
+      await helper.success(res,"success",dat)
     } catch (error) {
-      // console.log(error.message)
-      await res.status(400).json({
-        status:false,
-        message:"error",
-        data:error.message
-      })
-
-      console.log('--err', error)
+      console.log(error.message)
+      await helper.success(res,error.message)
     }
   },  
 
