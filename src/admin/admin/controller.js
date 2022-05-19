@@ -2,10 +2,7 @@ const Models = require("../../../models")
 const helper= require("../../helper")
 
 module.exports = {
-  testing: async (req, res) => {
-    console.log("----hereeeeeeeeeeeeeeeeeeeeeeee");
-    res.send("testing control;ler");
-  },
+
 
   signupUser: async (req, res) => {
     try {

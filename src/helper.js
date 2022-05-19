@@ -10,6 +10,7 @@ module.exports={
 
     error:(res,data)=>{
         return res.status(400).json({
+            code :400,
             status:false,
             message:"error",
             data:data
