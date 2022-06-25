@@ -2,5 +2,5 @@ const express = require("express");
 const router = express.Router();
 const controller = require("./controller");
 
-router.get("/apistest", controller.apisdata);
+router.post("/apistest", controller.apisdata);
 module.exports = router;
